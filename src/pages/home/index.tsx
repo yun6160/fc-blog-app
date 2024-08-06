@@ -10,11 +10,39 @@ export default function Home() {
                     <Link to='/profile'>프로필</Link>
                 </div>
             </header>
-            <div className='post-list'>Post List</div>
+            <div className='post__navigation'>
+                <div className='post__navigation--active'>전체</div>
+                <div>나의 글</div>
+            </div>
+            <div className='post__list'>
+                {[...Array(10)].map((e, i) => (
+                    <div key={i} className='post__box'>
+                        <Link to={`/posts/${i}`}>
+                            <div className='post__profile-box'>
+                                <div className='post__profile'></div>
+                                <div className='post__author-name'>패스트캠퍼스</div>
+                                <div className='post__date'>2023.07.08</div>
+                            </div>
+                            <div className='post__title'>게시글 {i}</div>
+                            <div className='post__text'>
+                                제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
+                                위원은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다. 모든
+                                국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로
+                                정한다. 국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을
+                                심의한다.
+                            </div>
+                            <div className='post__utils-box'>
+                                <div className='post__delete'>삭제</div>
+                                <div className='post__edit'>수정</div>
+                            </div>
+                        </Link>
+                    </div>
+                ))}
+            </div>
             <footer>
-                <div>Menu 1</div>
-                <div>Menu 2</div>
-                <div>Menu 3</div>
+                <Link to='/posts/new'>글쓰기</Link>
+                <Link to='/posts'>게시글</Link>
+                <Link to='/profile'>프로필</Link>
             </footer>
         </div>
     );
