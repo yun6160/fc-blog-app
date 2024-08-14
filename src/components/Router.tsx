@@ -7,13 +7,14 @@ import EditPost from "../pages/posts/edit";
 import Profile from "../pages/profile";
 import LoginPage from "../pages/login";
 import SignupPage from "../pages/signup";
+import PostsPage from "../pages/posts";
 
 export default function Router() {
     return (
         <div>
             <Routes>
                 <Route path='/' element={<Home />}></Route>
-                <Route path='/posts' element={<PostList />}></Route>
+                <Route path='/posts' element={<PostsPage />}></Route>
                 <Route path='/posts/new' element={<NewPost />}></Route>
                 <Route path='/posts/:id' element={<PostDetail />}></Route>
                 <Route path='/posts/edit/:id' element={<EditPost />}></Route>
