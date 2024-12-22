@@ -10,9 +10,12 @@ import LoginPage from "../pages/login";
 import SignupPage from "../pages/signup";
 import PostsPage from "../pages/posts";
 
-export default function Router() {
+interface RouterProps {
+    isAuthenticated: boolean;
+}
+
+export default function Router({ isAuthenticated }: RouterProps) {
     // firebase auth가 인증되었으면 true, 아니면 false 로직 추가
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
     return (
         <div>
             <Routes>
