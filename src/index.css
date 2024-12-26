@@ -438,3 +438,9 @@ form label {
 .form__link:focus {
     color: black;
 }
+
+.form__error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
